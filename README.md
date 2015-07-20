@@ -16,7 +16,7 @@ If the distance of two points in any dimension is more than <i>eps</i>, than the
 
 4. Use DFS (Depth First Search) to find clusters
 
-##### Note: Solution uses parallel streams, thus requires Java 8
+##### Note: Unless go1.5 (or newer), need to set GOMAXPROCS=XX to utilize all cores
 
 #### Example explaining how it works
 

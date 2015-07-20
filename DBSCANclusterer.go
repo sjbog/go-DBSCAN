@@ -1,3 +1,27 @@
+/*
+DBSCAN (Density-based spatial clustering) clustering optimized for multicore processing.
+
+Usage example:
+	var clusterer = NewDBSCANClusterer( 2.0, 2 )
+
+	var data = []ClusterablePoint{
+			&NamedPoint{"0", []float64{2, 4}},
+			&NamedPoint{"1", []float64{7, 3}},
+			&NamedPoint{"2", []float64{3, 5}},
+			&NamedPoint{"3", []float64{5, 3}},
+			&NamedPoint{"4", []float64{7, 4}},
+		}
+
+	clusterer.MinPts = 2
+	clusterer.SetEps( 2.0 )
+
+	// Automatic discovery of dimension with max variance
+	clusterer.AutoSelectDimension = false
+	// Set dimension manually
+	clusterer.SortDimensionIndex = 1
+
+	var result  [][]ClusterablePoint = clusterer.Cluster(data)
+*/
 package dbscan
 
 import (

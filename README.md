@@ -1,5 +1,5 @@
-# DBSCAN (go package)
-DBSCAN clustering optimized for multicore processing.
+# DBSCAN (go package) [![GoDoc](https://godoc.org/bitbucket.org/sjbog/go-DBSCAN?status.svg)](https://godoc.org/bitbucket.org/sjbog/go-DBSCAN)
+DBSCAN (Density-based spatial clustering) clustering optimized for multicore processing.
 
 ### Idea
 If the distance of two points in any dimension is more than <i>eps</i>, than the total distance is more than <i>eps</i>

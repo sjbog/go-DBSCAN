@@ -1,4 +1,4 @@
-# DBSCAN (go package) [![GoDoc](https://godoc.org/bitbucket.org/sjbog/go-DBSCAN?status.svg)](https://godoc.org/bitbucket.org/sjbog/go-DBSCAN)
+# DBSCAN (go package) [![GoDoc](https://godoc.org/bitbucket.org/sjbog/go-dbscan?status.svg)](https://godoc.org/bitbucket.org/sjbog/go-dbscan)
 DBSCAN (Density-based spatial clustering) clustering optimized for multicore processing.
 
 ### Idea

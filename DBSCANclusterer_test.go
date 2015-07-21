@@ -1,6 +1,14 @@
 package dbscan
 
-import "testing"
+import (
+	// "bufio"
+	// "io"
+	// "os"
+	// "path/filepath"
+	// "strconv"
+	// "strings"
+	"testing"
+)
 
 func Test_DBSCAN(t *testing.T) {
 	t.Parallel()
@@ -61,3 +69,68 @@ func Test_DBSCAN(t *testing.T) {
 	result = clusterer.Cluster(data)
 	compare(result, expectedClusters)
 }
+
+/*var (
+	blockSize = 64 * 1024 * 1024
+	LineDelim = byte('\n')
+)
+
+func Test_DBSCAN2(t *testing.T) {
+	var (
+		filename = "intermediate-92.txt"
+
+		data   []ClusterablePoint = NamedPointToClusterablePoint(transformToPoints(t, filename))
+		result [][]ClusterablePoint
+
+		clusterer = NewDBSCANClusterer(1.465, 10)
+
+		printCluster = func(result [][]ClusterablePoint) {
+			for i, cluster := range result {
+				t.Logf("Cluster %d: %d items", i, len(cluster))
+			}
+		}
+	)
+
+	t.Logf("Eps = %f", clusterer.GetEps())
+	result = clusterer.Cluster(data)
+	printCluster(result)
+}
+
+func transformToPoints(t *testing.T, filename string) []*NamedPoint {
+	var (
+		fileHandle, err = os.Open(filepath.Clean(filename))
+		reader          = bufio.NewReaderSize(fileHandle, blockSize)
+		line            string
+		records         = make([]*NamedPoint, 0, 10000)
+	)
+	defer fileHandle.Close()
+	if err != nil {
+		t.Fatalf(err.Error())
+		return nil
+	}
+
+	line, err = reader.ReadString(LineDelim)
+	line = strings.TrimSpace(line)
+
+	for _, name := range strings.Split(line, ",")[2:] {
+		records = append(records, NewNamedPoint(
+			name,
+			make([]float64, 0, 10000),
+		))
+	}
+
+	for err != io.EOF {
+		line, err = reader.ReadString(LineDelim)
+		line = strings.TrimSpace(line)
+		if line == "" {
+			continue
+		}
+
+		for i, v := range strings.Split(line, ",")[2:] {
+			floatValue, _ := strconv.ParseFloat(v, 64)
+			records[i].Point = append(records[i].Point, floatValue)
+		}
+	}
+
+	return records
+}*/

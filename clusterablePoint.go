@@ -53,3 +53,11 @@ func (self ClusterablePointSlice) Swap(i, j int) {
 
 // Sort is a convenience method.
 func (self ClusterablePointSlice) Sort() { sort.Sort(self) }
+
+func NamedPointToClusterablePoint(in []*NamedPoint) (out []ClusterablePoint) {
+	out = make([]ClusterablePoint, len(in))
+	for i, v := range in {
+		out[i] = v
+	}
+	return
+}

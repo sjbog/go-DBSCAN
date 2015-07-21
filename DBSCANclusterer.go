@@ -143,7 +143,8 @@ func (this *DBSCANClusterer) Cluster(data []ClusterablePoint) [][]ClusterablePoi
 func (this *DBSCANClusterer) CalcDistance(aPoint, bPoint []float64) float64 {
 	var sum = 0.0
 	for i, size := 0, this.numDimensions; i < size; i += 1 {
-		sum += (aPoint[i] - bPoint[i]) * (aPoint[i] - bPoint[i])
+		x := aPoint[i] - bPoint[i]
+		sum += x * x
 	}
 	return sum
 }
